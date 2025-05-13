@@ -1,9 +1,8 @@
-using Domain.Base;
-using Domain.Helpers;
+using Services.Contracts.Helpers;
 
-namespace Domain.Entity;
+namespace Services.Contracts.Dto.Owner;
 
-public class Owner : IEntity<Guid>
+public class OwnerDto
 {
     /// <summary>
     /// ИД пользователя
@@ -13,12 +12,12 @@ public class Owner : IEntity<Guid>
     /// <summary>
     /// Тип пользователя
     /// </summary>
-    public UserType userType { get; set; }
+    public UserTypeDto userType { get; set; }
     
     /// <summary>
     /// Дата создания
     /// </summary>
-    public DateTime dateCreated { get; set; } = DateTime.Now;
+    public DateTime dateCreated { get; set; }
     
     /// <summary>
     /// Дата изменения
@@ -28,5 +27,5 @@ public class Owner : IEntity<Guid>
     /// <summary>
     /// признак удаления
     /// </summary>
-    public bool isDeleted { get; set; } = false;
+    public bool isDeleted { get; set; } 
 }
