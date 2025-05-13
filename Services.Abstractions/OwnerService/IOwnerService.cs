@@ -1,3 +1,4 @@
+using Domain.Entity;
 using Services.Contracts.Dto.Owner;
 
 namespace Services.Abstractions.OwnerService;
@@ -23,7 +24,7 @@ public interface IOwnerService
     /// </summary>
     /// <param name="updateOwnerDto"></param>
     /// <returns></returns>
-    Task UpdateOwnerAsyn(UpdateOwnerDto updateOwnerDto);
+    Task UpdateOwnerAsyn(Guid ownerId, UpdateOwnerDto updateOwnerDto);
     
     /// <summary>
     /// Удалить
@@ -35,5 +36,5 @@ public interface IOwnerService
     /// Получить список всех владельцев
     /// </summary>
     /// <returns></returns>
-    Task<IEnumerable<OwnerDto>> GetAllOwnersAsync();
+    Task<IEnumerable<Owner>> GetAllOwnersAsync();
 }

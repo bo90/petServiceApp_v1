@@ -1,3 +1,4 @@
+using Domain.Entity;
 using Services.Contracts.Dto.Beast;
 
 namespace Services.Abstractions.BeastServices;
@@ -23,7 +24,7 @@ public interface IBeastService
     /// </summary>
     /// <param name="beastDto"></param>
     /// <returns></returns>
-    Task UpdateBeastAsyn(UpdateBeastDto beastDto);
+    Task UpdateBeastAsyn(Guid beastId, UpdateBeastDto beastDto);
     
     /// <summary>
     /// Удалить запись по пропавшему животному
@@ -36,5 +37,5 @@ public interface IBeastService
     /// Получить список всех пропавших животных
     /// </summary>
     /// <returns></returns>
-    Task<ICollection<BeastDto>> GetAllBeastsAsync();
+    Task<ICollection<Beast>> GetAllBeastsAsync();
 }
