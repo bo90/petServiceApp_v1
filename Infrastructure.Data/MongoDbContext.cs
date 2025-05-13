@@ -1,9 +1,10 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
 namespace Infrastructure.Data;
 
-public class MongoDbContext
+public class MongoDbContext : DbContext
 {
     private readonly IMongoDatabase _database;
 
